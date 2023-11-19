@@ -1,5 +1,5 @@
 // Put your announceMachines function here! ✨
-function announceMachines(announce, ...machines) {
+function announceMachines({ announce, ...machines }) {
 	let label;
 	let labelsCount = 0;
 
