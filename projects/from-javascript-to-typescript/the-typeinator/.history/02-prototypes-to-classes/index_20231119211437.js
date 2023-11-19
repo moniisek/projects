@@ -42,7 +42,6 @@ class Humanoid extends Robot {
 	}
 
 	announce() {
-		super.announce();
 		console.log(" > " + this.catchphrase + " <");
 	}
 }
