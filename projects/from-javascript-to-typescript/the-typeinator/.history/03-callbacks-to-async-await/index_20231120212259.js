@@ -5,12 +5,15 @@ async function checkEmotion(knownEmotions, emotion) {
 	});
 }
 
-async function speak(knownEmotions, newEmotion, phrase) {
+async function speak(knownEmotions, newEmotion, phrase, callback) {
 	let checkEmotionResult = await checkEmotion(knownEmotions, newEmotion);
 	if (checkEmotionResult) {
-		return `"${phrase}" (${newEmotion})`;
+		callback(`"${phrase}" (${newEmotion})`);
 	} else {
-		throw new Error(`Does not compute. I do not understand ${newEmotion}.`);
+		callback(
+			undefined,
+			new Error(`Does not compute. I do not understand ${newEmotion}.`)
+		);
 	}
 }
 
