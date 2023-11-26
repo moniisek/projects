@@ -35,14 +35,11 @@ type Town = PlaceBase & {
 	type: "town";
 };
 
-type Clearing = PlaceBase & {
-	through?: Place;
-	type: "clearing";
-};
+type Clearing = PlaceBase & { through: Place; type: "clearing" };
 
 type Place = Clearing | Path | Town | Stream;
 
-let current: Place | undefined = {
+let current: Place = {
 	name: "Woesong Bridge",
 	proximity: 100,
 	through: {
