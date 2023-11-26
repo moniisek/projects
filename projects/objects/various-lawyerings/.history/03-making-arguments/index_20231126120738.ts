@@ -14,7 +14,7 @@ type MotionBase = {
 
 type Allowed = { deliberationHours: number };
 type Denied = Allowed & { annoyedJustice: boolean };
-type Pending = { estimatedDeliberationHours: number };
+type Pending = { estimatedDeliberationHours: boolean };
 
 type Motion = MotionBase &
 	(PostTrial | PreTrial) &

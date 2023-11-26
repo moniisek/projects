@@ -1,24 +1,4 @@
 // Write your types here! ✨
-type PostTrial = {
-	classification: "acquittal" | "correction" | "new trial";
-};
-type PreTrial = {
-	classification: "suppress" | "dismiss" | "venue";
-};
-type MotionBase = {
-	from: "plaintiff" | "defendant";
-	reason: string;
-	status: "denied" | "pending" | "allowed";
-	step: "post-trial" | "pre-trial";
-};
-
-type Allowed = { deliberationHours: number };
-type Denied = Allowed & { annoyedJustice: boolean };
-type Pending = { estimatedDeliberationHours: number };
-
-type Motion = MotionBase &
-	(PostTrial | PreTrial) &
-	(Allowed | Denied | Pending);
 
 export const motions: Motion[] = [
 	{

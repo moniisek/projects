@@ -25,10 +25,11 @@ export const cases: Case[] = [
 		title: "Noble v. Bradford Marine, Inc",
 	},
 	{
+		amusing: true,
 		court: "state",
 		defendant: "PepsiCo, Inc.",
 		decided: new Date("August 5, 1999"),
-		id: ["96-cv-5320", "96-cv-9069"],
+		ids: ["96-cv-5320", "96-cv-9069"],
 		plaintiff: "John Leonard",
 		title: "Leonard v. Pepsico, Inc.",
 	},
