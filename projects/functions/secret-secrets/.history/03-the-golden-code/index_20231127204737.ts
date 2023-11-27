@@ -10,11 +10,11 @@ export function createCodeCracker(props: CodeCrackerProps) {
 	return (text: string): string | undefined => {
 		let attempt = 0;
 		while (attempt < props.attempts) {
+			attempt += 1;
 			const guess = props.makeGuess(text, attempt);
 			if (props.validateGuess(guess)) {
 				return guess;
 			}
-			attempt += 1;
 		}
 		return undefined;
 	};

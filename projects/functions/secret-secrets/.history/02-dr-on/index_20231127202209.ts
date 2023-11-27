@@ -13,7 +13,7 @@ export function createAdvancedCipher(
 				case /[aeiou]/i.test(c):
 					result.push(onVowel(c));
 					break;
-				case /[bcdfghjklmnpqrstvwxyz]/i.test(c):
+				case /[bcdfghjklmnpqrstvwxyz]/i.test(x):
 					result.push(onConsonant(c));
 					break;
 				default:

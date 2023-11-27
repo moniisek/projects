@@ -7,14 +7,14 @@ type CodeCrackerProps = {
 	validateGuess: ValidateGuess;
 };
 export function createCodeCracker(props: CodeCrackerProps) {
-	return (text: string): string | undefined => {
+	return (text: string): true | undefined => {
 		let attempt = 0;
 		while (attempt < props.attempts) {
+			attempt += 1;
 			const guess = props.makeGuess(text, attempt);
 			if (props.validateGuess(guess)) {
-				return guess;
+				return true;
 			}
-			attempt += 1;
 		}
 		return undefined;
 	};
