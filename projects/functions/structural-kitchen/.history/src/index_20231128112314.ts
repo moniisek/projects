@@ -49,6 +49,7 @@ export function createKitchen(
 					stock[key] += newStock[key];
 				}
 			}
+
 			return enoughBudget;
 		},
 		prepare: (recipe) => {

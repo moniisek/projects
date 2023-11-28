@@ -38,27 +38,24 @@ export function createKitchen(
 			dirt = cleaner(dirt, time);
 		},
 		purchase: (expense) => {
-			const enoughBudget = expense <= budget;
-			if (enoughBudget) {
+			const isEnoughBudget = expense <= budget;
+			if (isEnoughBudget) {
 				const newStock = supplier(expense);
-
-				budget -= expense;
-
 				const stockKeys = Object.keys(stock);
 				for (const key of stockKeys) {
 					stock[key] += newStock[key];
 				}
 			}
-			return enoughBudget;
+			return isEnoughBudget;
 		},
 		prepare: (recipe) => {
 			const notDirty = dirt < 100;
 			let recipeSuccess = false;
 			if (notDirty) {
 				const recipeResult = recipe(stock);
-				dirt += 1;
-				if (recipeResult.succeeded === true) {
+				if (recipeResult.succeeded) {
 					stock = recipeResult.newStock;
+					dirt += 1;
 				}
 				recipeSuccess = recipeResult.succeeded;
 			}
