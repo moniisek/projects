@@ -4,8 +4,7 @@ export function shallowDifferences(a: string[], b: string[]) {
 		return undefined;
 	}
 
-	const result: (string | undefined)[] = [];
-
+	const result = [];
 	for (let i = 0; i < a.length; i++) {
 		if (a[i] === b[i]) {
 			result.push(a[i]);
@@ -13,6 +12,5 @@ export function shallowDifferences(a: string[], b: string[]) {
 			result.push(undefined);
 		}
 	}
-	return result;
 }
 // You'll need to export it so the tests can run it.

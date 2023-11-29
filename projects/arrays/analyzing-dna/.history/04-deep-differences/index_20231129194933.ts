@@ -6,14 +6,15 @@ export function deepDifferences(a: string[][], b: string[][]) {
 		return undefined;
 	}
 
-	const result: (undefined | (string | undefined)[])[] = [];
+	type SequenceResult = (string | undefined)[];
+	const result: SequenceResult[] = [];
 
 	for (let sequenceIdx = 0; sequenceIdx < a.length; sequenceIdx++) {
 		if (lengthNotEqual(a[sequenceIdx], b[sequenceIdx])) {
-			result.push(undefined);
+			result.push([undefined]);
 			continue;
 		}
-		const currentResult: (string | undefined)[] = [];
+		const currentResult: SequenceResult = [];
 
 		for (let charIdx = 0; charIdx < a[sequenceIdx].length; charIdx++) {
 			if (a[sequenceIdx][charIdx] === b[sequenceIdx][charIdx]) {

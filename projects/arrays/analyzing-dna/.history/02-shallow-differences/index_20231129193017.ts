@@ -4,8 +4,7 @@ export function shallowDifferences(a: string[], b: string[]) {
 		return undefined;
 	}
 
-	const result: (string | undefined)[] = [];
-
+	const result = [];
 	for (let i = 0; i < a.length; i++) {
 		if (a[i] === b[i]) {
 			result.push(a[i]);

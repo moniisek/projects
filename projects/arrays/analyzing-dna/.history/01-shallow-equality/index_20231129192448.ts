@@ -4,8 +4,14 @@ export function shallowEquality(a: string[], b: string[]) {
 		return false;
 	}
 
-	for (let i = 0; i < a.length; i++) {
-		if (a[i] !== b[i]) {
+	const aSorted = a.slice();
+	aSorted.sort();
+
+	const bSorted = b.slice();
+	bSorted.sort();
+
+	for (let i = 0; i < aSorted.length; i++) {
+		if (aSorted[i] !== bSorted[i]) {
 			return false;
 		}
 	}
