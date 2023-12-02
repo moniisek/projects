@@ -1,4 +1,8 @@
 // Write your groupRestaurants function here! ✨
+interface Restaurant {
+	city: string;
+	name: string;
+}
 export function groupRestaurants(
 	restaurants: { city: string; name: string }[]
 ) {

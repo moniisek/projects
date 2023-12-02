@@ -48,7 +48,7 @@ export function describeLandmark(landmark: Landmark): string {
 	const lines = [`${landmark.name} is a ${landmark.type} in Upstate New York.`];
 	switch (landmark.type) {
 		case "lake":
-			lines.push(`It covers ${landmark.miles} square miles of water.`);
+			lines.push(`It covers ${landmark.miles} of water.`);
 			break;
 		case "lighthouse":
 			lines.push(
@@ -56,7 +56,7 @@ export function describeLandmark(landmark: Landmark): string {
 			);
 			break;
 		case "mountain":
-			lines.push(`Its peak is ${landmark.height} feet high.`);
+			lines.push(`Its peak is ${landmark.height} feet hight`);
 			break;
 		case "park":
 			lines.push(`It covers ${landmark.acres} square acres.`);

@@ -26,7 +26,7 @@ export function describeCity(city: City) {
 	if (city.catchphrase) {
 		lines.push(`* "${city.catchphrase}"`);
 	}
-	const coordinates = `* Located at ${describeCoordinate(
+	const coordinates = `* ${describeCoordinate(
 		city.coordinates.north
 	)}N ${describeCoordinate(city.coordinates.west)}W`;
 	lines.push(coordinates);

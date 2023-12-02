@@ -17,7 +17,7 @@ function describeCoordinate(coordinate: Coordinate) {
 	return [
 		`${describeUnit(coordinate[0])}°`,
 		`${describeUnit(coordinate[1])}'`,
-		`${describeUnit(coordinate[2])}"`,
+		`${describeUnit(coordinate[2])}'"`,
 	].join("");
 }
 
@@ -26,7 +26,7 @@ export function describeCity(city: City) {
 	if (city.catchphrase) {
 		lines.push(`* "${city.catchphrase}"`);
 	}
-	const coordinates = `* Located at ${describeCoordinate(
+	const coordinates = `* ${describeCoordinate(
 		city.coordinates.north
 	)}N ${describeCoordinate(city.coordinates.west)}W`;
 	lines.push(coordinates);
