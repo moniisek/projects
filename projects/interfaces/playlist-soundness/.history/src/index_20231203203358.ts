@@ -2,7 +2,7 @@
 
 interface Song {
 	type: "song";
-	artist: string[] | string;
+	artist: string[];
 	length: number;
 	name: string;
 }
@@ -39,12 +39,7 @@ export function unrollPlaylist(
 	};
 
 	function handleSong(song: Song) {
-		if (Array.isArray(song.artist)) {
-			song.artist.forEach(addArtist(song.name));
-		} else {
-			addArtist(song.name)(song.artist);
-		}
-
+		song.artist.forEach(addArtist(song.name));
 		songs.push(song.name);
 		time += song.length;
 	}
